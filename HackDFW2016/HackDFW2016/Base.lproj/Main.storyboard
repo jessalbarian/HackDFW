@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--BlueLight-->
+        <!--View Controller-->
         <scene sceneID="r6y-3j-rLk">
             <objects>
                 <viewController id="qb7-ea-LMl" customClass="ViewController" customModule="HackDFW2016" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,28 +36,52 @@
                                     <action selector="blueBtn:" destination="qb7-ea-LMl" eventType="touchUpInside" id="BnN-8D-Daa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BA3-rx-l6L">
+                                <rect key="frame" x="90" y="531" width="420" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="420" id="6hb-On-dOT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are at the campus" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0K6-p6-ph8">
+                                <rect key="frame" x="215" y="507" width="171" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="0K6-p6-ph8" firstAttribute="centerX" secondItem="BA3-rx-l6L" secondAttribute="centerX" id="3dw-P9-BLL"/>
                             <constraint firstItem="3Jy-Xt-zwi" firstAttribute="top" secondItem="anr-Uj-sEB" secondAttribute="bottom" constant="19" id="4mn-ky-yfM"/>
                             <constraint firstItem="N8h-YF-Qhe" firstAttribute="top" secondItem="3Jy-Xt-zwi" secondAttribute="bottom" constant="101" id="9e0-ZK-rag"/>
+                            <constraint firstItem="BA3-rx-l6L" firstAttribute="top" secondItem="3Jy-Xt-zwi" secondAttribute="bottom" constant="32" id="GXp-0a-KS8"/>
                             <constraint firstItem="3Jy-Xt-zwi" firstAttribute="centerX" secondItem="4Gw-0M-aIt" secondAttribute="centerX" id="K4U-lD-UK6"/>
+                            <constraint firstItem="0K6-p6-ph8" firstAttribute="top" secondItem="3Jy-Xt-zwi" secondAttribute="bottom" constant="8" symbolic="YES" id="Kac-0q-Ae1"/>
                             <constraint firstItem="3Jy-Xt-zwi" firstAttribute="centerY" secondItem="X95-jd-Bnj" secondAttribute="centerY" id="Oh3-Cd-ytE"/>
                             <constraint firstItem="3Jy-Xt-zwi" firstAttribute="centerX" secondItem="D3z-3g-Q6j" secondAttribute="centerX" id="RnH-R3-4LS"/>
                             <constraint firstItem="4Gw-0M-aIt" firstAttribute="top" secondItem="anr-Uj-sEB" secondAttribute="bottom" constant="98" id="Vdc-h1-JG3"/>
                             <constraint firstItem="4Gw-0M-aIt" firstAttribute="centerY" secondItem="X95-jd-Bnj" secondAttribute="centerY" id="WK6-Zv-6yi"/>
+                            <constraint firstItem="BA3-rx-l6L" firstAttribute="centerX" secondItem="X95-jd-Bnj" secondAttribute="centerX" id="aNm-cl-MF3"/>
                             <constraint firstItem="4Gw-0M-aIt" firstAttribute="centerX" secondItem="X95-jd-Bnj" secondAttribute="centerX" id="akF-bZ-Key"/>
                             <constraint firstItem="3Jy-Xt-zwi" firstAttribute="leading" secondItem="D3z-3g-Q6j" secondAttribute="leadingMargin" constant="70" id="gmf-0E-SSa"/>
+                            <constraint firstItem="N8h-YF-Qhe" firstAttribute="top" secondItem="BA3-rx-l6L" secondAttribute="bottom" constant="48" id="hbO-PE-LKQ"/>
                             <constraint firstItem="X95-jd-Bnj" firstAttribute="top" secondItem="anr-Uj-sEB" secondAttribute="bottom" constant="109" id="pc8-Qw-Gf5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="BlueLight" id="883-HM-tZL">
+                    <navigationItem key="navigationItem" id="883-HM-tZL">
+                        <barButtonItem key="leftBarButtonItem" image="settings" id="fdW-em-hYY">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Zbu-72-Qlh">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="fade" destination="X95-jd-Bnj" id="aL4-xX-kMh"/>
+                        <outlet property="universityLabel" destination="BA3-rx-l6L" id="Y0g-Nt-TuG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qqn-F3-pQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -86,5 +110,6 @@
     <resources>
         <image name="btn" width="1000" height="1000"/>
         <image name="fade" width="1000" height="1000"/>
+        <image name="settings" width="44" height="44"/>
     </resources>
 </document>
