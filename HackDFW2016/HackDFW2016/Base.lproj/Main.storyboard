@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -77,6 +78,11 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Zbu-72-Qlh">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="d5l-G5-M9d" kind="popoverPresentation" popoverAnchorBarButtonItem="Zbu-72-Qlh" id="BGq-w9-Jj3">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -87,6 +93,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qqn-F3-pQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1072" y="113"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="B4J-J1-N1f">
+            <objects>
+                <viewController id="Ol8-Ca-XEX" customClass="CameraViewController" customModule="HackDFW2016" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MGE-4I-TIu"/>
+                        <viewControllerLayoutGuide type="bottom" id="ucM-hJ-rd1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z9m-wN-rCz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7og-Tz-AaH">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem id="3Ke-3L-CM3">
+                                        <leftBarButtonItems>
+                                            <barButtonItem title="Item" systemItem="camera" id="r7s-FE-sQW">
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="useCamera:" destination="Ol8-Ca-XEX" id="2Al-m8-jiR"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Images" id="tiv-3Z-bms">
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="useCameraRoll:" destination="Ol8-Ca-XEX" id="wo3-fP-1yB"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </leftBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K98-ie-Olc">
+                                <rect key="frame" x="36" y="68" width="544" height="443"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="K98-ie-Olc" firstAttribute="leading" secondItem="z9m-wN-rCz" secondAttribute="leadingMargin" constant="16" id="28a-7l-RPI"/>
+                            <constraint firstItem="7og-Tz-AaH" firstAttribute="top" secondItem="K98-ie-Olc" secondAttribute="bottom" constant="45" id="2O3-ZM-5ZI"/>
+                            <constraint firstItem="K98-ie-Olc" firstAttribute="trailing" secondItem="z9m-wN-rCz" secondAttribute="trailingMargin" id="3a5-jT-m6A"/>
+                            <constraint firstAttribute="trailing" secondItem="7og-Tz-AaH" secondAttribute="trailing" id="UuK-ad-1m8"/>
+                            <constraint firstItem="7og-Tz-AaH" firstAttribute="bottom" secondItem="ucM-hJ-rd1" secondAttribute="top" id="WKN-qS-URa"/>
+                            <constraint firstItem="K98-ie-Olc" firstAttribute="top" secondItem="MGE-4I-TIu" secondAttribute="bottom" constant="4" id="ozK-al-vqv"/>
+                            <constraint firstItem="7og-Tz-AaH" firstAttribute="leading" secondItem="z9m-wN-rCz" secondAttribute="leading" id="tQM-pY-DZ0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jse-1u-gRP">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="3hh-mW-Nqu"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pic" destination="K98-ie-Olc" id="haU-Zh-rWa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x8K-rp-8t9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2550" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F3b-Jw-Kdb">
@@ -105,6 +171,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8t-0J-b0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="260" y="113"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5Fo-oL-Cp0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d5l-G5-M9d" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jxs-ay-wgH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ol8-Ca-XEX" kind="relationship" relationship="rootViewController" id="BlN-mX-Rww"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pur-Bp-l2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1738" y="116"/>
         </scene>
     </scenes>
     <resources>

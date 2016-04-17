@@ -17,7 +17,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //----------
     // VARIABLES
     //----------
-    let university_name = "University of Colorado Boulder"
+    let university_name = "University of Colorado Boulder" // test university
     let phoneNumber = "7206207466" // testing calling
     
     @IBOutlet var fade: UIImageView! // btn fade image
@@ -33,8 +33,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     // MAIN CALL FUNCTION
     //-------------------
     @IBAction func blueBtn(sender: AnyObject) {
-        let url:NSURL = NSURL(string: "tel://\(phoneNumber)")!
-        UIApplication.sharedApplication().openURL(url)
+        let alert = UIAlertController(title: "Is this an emergency?", message: "If yes, call 911", preferredStyle: UIAlertControllerStyle.Alert)
+         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { (ACTION :UIAlertAction!)in })) 
+        alert.addAction(UIAlertAction(title: "No", style: .Default, handler: { action in
+            
+            switch action.style{
+            case .Default:
+                print("default")
+                let url:NSURL = NSURL(string: "tel://\(self.phoneNumber)")!
+                UIApplication.sharedApplication().openURL(url)
+            case .Cancel:
+                print("Call 911")
+                
+            case .Destructive:
+                print("destructive")
+            }
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        
     }
     
     
@@ -126,7 +143,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy=kCLLocationAccuracyBest
         locationManager.distanceFilter=kCLDistanceFilterNone
         
-        
+        UIApplication.sharedApplication().idleTimerDisabled = true
     
     }
     
