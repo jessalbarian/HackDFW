@@ -111,8 +111,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Change color of navbar and text
-        self.navigationItem.title = "Add Photos"
+        // Change color of navbar
         navigationController!.navigationBar.barTintColor = UIColor.blackColor()
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         // Do any additional setup after loading the view.

@@ -50,9 +50,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
         }))
         self.presentViewController(alert, animated: true, completion: nil)
-        
-        
     }
+    
+    
+    
+    
+    @IBAction func redBtn(sender: AnyObject) {
+        let alert = UIAlertController(title: "Warning", message: "You are about to call 911.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { (ACTION :UIAlertAction!)in }))
+        alert.addAction(UIAlertAction(title: "Call 911", style: .Default, handler: { action in
+            
+            switch action.style{
+            case .Default:
+                print("default")
+                let url:NSURL = NSURL(string: "tel://\(self.phoneNumber)")!
+                UIApplication.sharedApplication().openURL(url)
+            case .Cancel:
+                print("Cancel")
+                
+            case .Destructive:
+                print("destructive")
+            }
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     
     
     
@@ -118,8 +140,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Change color of navbar and text
-        self.navigationItem.title = "BlueLight"
+        // Change color of navbar
         navigationController!.navigationBar.barTintColor = UIColor.blackColor()
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         

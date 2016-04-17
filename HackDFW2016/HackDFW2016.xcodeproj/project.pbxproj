@@ -17,6 +17,7 @@
 		7D91E9861CC2C229004E2932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D91E9851CC2C229004E2932 /* Assets.xcassets */; };
 		7D91E9891CC2C229004E2932 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D91E9871CC2C229004E2932 /* LaunchScreen.storyboard */; };
 		7D9D35121CC3908D00512870 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9D35111CC3908D00512870 /* CameraViewController.swift */; };
+		7D9D35141CC39A3400512870 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9D35131CC39A3400512870 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		7D91E9881CC2C229004E2932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D91E98A1CC2C229004E2932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D9D35111CC3908D00512870 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		7D9D35131CC39A3400512870 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				7D91E9801CC2C229004E2932 /* ViewController.swift */,
 				7D6E53761CC384A000CD8893 /* Location.swift */,
 				7D91E9821CC2C229004E2932 /* Main.storyboard */,
+				7D9D35131CC39A3400512870 /* TableViewController.swift */,
 				7D9D35111CC3908D00512870 /* CameraViewController.swift */,
 				7D91E9851CC2C229004E2932 /* Assets.xcassets */,
 				7D91E9871CC2C229004E2932 /* LaunchScreen.storyboard */,
@@ -227,6 +230,7 @@
 				7D91E9811CC2C229004E2932 /* ViewController.swift in Sources */,
 				7D9D35121CC3908D00512870 /* CameraViewController.swift in Sources */,
 				7D6E53771CC384A000CD8893 /* Location.swift in Sources */,
+				7D9D35141CC39A3400512870 /* TableViewController.swift in Sources */,
 				7D91E97F1CC2C229004E2932 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
