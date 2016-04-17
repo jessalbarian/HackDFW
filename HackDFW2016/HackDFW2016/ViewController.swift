@@ -129,10 +129,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: #selector(ViewController.fadeAnimation(_:)), userInfo: nil, repeats: true)
         
         
-        let location = CLLocationCoordinate2D(
-            latitude: 40.74836,
-            longitude: -73.984607
-        )
+        for item in locations{
+            let point = CLLocationCoordinate2D(
+                latitude: item.lat,
+                longitude: item.long
+            )
+            print(point)
+        }
+        
+        
         
         
         let status:CLAuthorizationStatus = CLLocationManager.authorizationStatus()
@@ -148,7 +153,30 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    
+    //-------------------
+    // GETS FIREBASE DATA
+    //-------------------
+//    override func viewDidAppear(animated: Bool) {
+//        super.viewDidAppear(animated)
+//        ref.observeEventType(FEventType.Value, withBlock: {snapshot in self.locations=[]
+//            if let snapshots = snapshot.children.allObjects as?
+//                [FDataSnapshot]{
+//                for item in snapshots {
+//                    guard let lat = item.value["latitude"] as? CLLocationDegrees,
+//                        let long = item.value["longitude"] as? CLLocationDegrees
+//                        else {
+//                            continue
+//                    }
+//                    let newLocation = Location(newlat: lat, newlong: long)
+//                    self.locations.append(newLocation)
+//                }
+//            }
+////            self.setLocations()
+//            //            self.mapView.reloadInputViews()
+//            
+//        })
+//        
+//    }
     
 
     override func didReceiveMemoryWarning() {
