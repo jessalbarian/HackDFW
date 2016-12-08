@@ -15,7 +15,7 @@ def testWorks():
         global schoolListings
         global pageNumber
 
-        while pageNumber < 297:
+        while pageNumber < 302:
 		try:
 			url = srcUrl + str(pageNumber)
 			request = requests.get(url)
